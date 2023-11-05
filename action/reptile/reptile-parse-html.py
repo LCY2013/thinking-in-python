@@ -18,7 +18,7 @@ bs_info = bs(response.text, 'html.parser')
 # Python 中使用 for in 形式的循环,Python使用缩进来做语句块分隔
 for tags in bs_info.find_all('div', attrs={'class': 'hd'}):
     for tag in tags.find_all('a', ):
-        print(tag.get('href'))
         # 获取所有链接
-        print(tag.find('span', ).text)
+        print(tag.get('href'))
         # 获取电影名字
+        print(tag.find('span', ).text)
