@@ -1,3 +1,4 @@
+from http import cookiejar
 from urllib import request
 
 # Get the response from the URL
@@ -5,12 +6,14 @@ urlopen = request.urlopen('http://httpbin.org/get')
 print(urlopen.read().decode('utf-8'))
 
 # Post the data to the URL
-resp = request.urlopen('http://httpbin.org/post', data=b'key=value', timeout=10)
+resp = request.urlopen(
+    'http://httpbin.org/post',
+    data=b'key=value',
+    timeout=10)
 print(resp.read().decode())
 
 # cookie = http.cookiejar.CookieJar()
 
-from http import cookiejar
 
 # 创建一个cookiejar对象
 cookie = cookiejar.CookieJar()
