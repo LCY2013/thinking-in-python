@@ -1,3 +1,3 @@
 # thinking-in-python
 
-- [python tool](pytool/README.md)
+- [python tool](doc/pytool/README.md)
