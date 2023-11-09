@@ -3,3 +3,4 @@
 - scrapy startproject spiders
 - cd spiders && cd spiders
 - scrapy genspider -t crawl movies movie.douban.com
+- scrapy crawl movies
