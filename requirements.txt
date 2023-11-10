@@ -6,6 +6,7 @@ bs4==0.0.1
 certifi==2023.7.22
 cffi==1.16.0
 charset-normalizer==3.3.2
+colorama==0.4.6
 constantly==23.10.4
 cryptography==41.0.5
 cssselect==1.2.0
@@ -25,6 +26,7 @@ packaging==23.2
 pandas==2.1.2
 parsel==1.8.1
 platformdirs==3.11.0
+pretty-errors==1.2.25
 Protego==0.3.0
 pyasn1==0.5.0
 pyasn1-modules==0.3.0
