@@ -1,9 +1,7 @@
 import scrapy
-from scrapy.linkextractors import LinkExtractor
-from scrapy.spiders import CrawlSpider, Rule
 
 
-class HttpbinSpider(CrawlSpider):
+class HttpbinSpider(scrapy.Spider):
     name = 'httpbin'
     allowed_domains = ['httpbin.org']
     # 通过ip查看请求的ip地址
