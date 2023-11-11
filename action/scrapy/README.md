@@ -20,6 +20,19 @@
 - cd proxyspider
 - scrapy genspider -t crawl httpbin httpbin.org
 - scrapy crawl httpbin
+- scrapy crawl httpbin --nolog
+- scrapy crawl httpbin -o proxies.json
+- scrapy crawl httpbin -o proxies.json -s LOG_ENABLED=True -s LOG_FILE=log.txt
+
+## randproxy http_proxy
+
+- scrapy startproject randproxy
+- cd randproxy
+- scrapy genspider -t crawl httpbin httpbin.org
+- scrapy crawl httpbin
+- scrapy crawl httpbin --nolog
+- scrapy crawl httpbin -o proxies.json
+- scrapy crawl httpbin -o proxies.json -s LOG_ENABLED=True -s LOG_FILE=log.txt
 
 
 
