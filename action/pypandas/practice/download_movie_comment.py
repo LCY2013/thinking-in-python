@@ -44,12 +44,13 @@ if __name__ == '__main__':
     # 禁断的魔术 短评
     book_shorts = []
     q = queue.Queue()
-    for page in range(1, 31):
-        url = f'https://book.douban.com/subject/30317421/comments/hot?p={page}'
+    for page in range(0, 31):
+        url = f'https://book.douban.com/subject/30317421/comments/?start={page}&limit=20&status=P&sort=score'
 
         content, endpage = download(url)
-        write_to_queue(content, q)
-        write_to_file(content)
+        ranges = [(star, vote, shorts) for star, vote, shorts in content]
+        write_to_queue(ranges, q)
+        write_to_file(ranges)
         if endpage:
             # print(f'debug --- {endpage}')
             if endpage[0] == 'page-disabled':
