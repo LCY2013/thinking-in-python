@@ -3,7 +3,10 @@ import torchtext
 from torchtext import vocab
 
 # 预先训练好的词向量
-gv = torchtext.vocab.GloVe(name='6B', dim=50)
+# gv = torchtext.vocab.GloVe(name='6B', dim=50)
+# gv = torchtext.vocab.GloVe(name='42B', dim=50)
+# gv = torchtext.vocab.GloVe(name='840B', dim=50)
+gv = torchtext.vocab.GloVe(name='twitter.27B', dim=50)
 # 40万个词，50个维度
 len(gv.vectors), gv.vectors.shape
 # 获得单词的在Glove词向量中的索引(坐标)

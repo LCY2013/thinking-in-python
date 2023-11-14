@@ -494,3 +494,4 @@ fabric.properties
 .idea/caches/build_file_checksums.ser
 
 .idea
+/action/practice/nlp/.vector_cache/
