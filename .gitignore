@@ -495,3 +495,4 @@ fabric.properties
 
 .idea
 /action/practice/nlp/.vector_cache/
+.vector_cache
