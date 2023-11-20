@@ -87,6 +87,7 @@ python manage.py migrate
 ```bash
 python manage.py makemigrations mysite
 python manage.py migrate mysite
+python manage.py migrate
 ```
 
 ## 10. 创建应用
