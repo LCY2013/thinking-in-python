@@ -13,10 +13,11 @@ def books_short(request):
     counter = T1.objects.all().count()
 
     # 平均星级
-    # star_value = T1.objects.values('n_star')
-    star_avg = f" {T1.objects.aggregate(Avg('n_star'))['n_star__avg']:0.1f} "
-    # 情感倾向
-    sent_avg = f" {T1.objects.aggregate(Avg('sentiment'))['sentiment__avg']:0.2f} "
+    if counter > 0:
+        # star_value = T1.objects.values('n_star')
+        star_avg = f" {T1.objects.aggregate(Avg('n_star'))['n_star__avg']:0.1f} "
+        # 情感倾向
+        sent_avg = f" {T1.objects.aggregate(Avg('sentiment'))['sentiment__avg']:0.2f} "
 
     # 正向数量
     queryset = T1.objects.values('sentiment')
