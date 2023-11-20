@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
+from .models import Name
+
 
 # Create your views here.
 def index(request):
@@ -23,3 +25,8 @@ def name(request, **kwargs):
 def myyear(request, year):
     print(year)
     return render(request, 'yearview.html')
+
+def books(request):
+    ###  从models取数据传给template  ###
+    n = Name.objects.all()
+    return render(request, 'bookslist.html', locals())
