@@ -101,3 +101,29 @@ class Property(object):
 
     def deleter(self, fdel):
         return type(self)(self.fget, self.fset, fdel, self.__doc__)
+
+
+class Human(object):
+    def __init__(self):
+        self._gender = None
+
+    # 将方法封装成属性
+    @Property
+    def gender(self):
+        print(self._gender)
+
+    # 支持修改
+    @gender.setter
+    def gender(self, value):
+        self._gender = value
+
+    # 支持删除
+    @gender.deleter
+    def gender(self):
+        del self._gender
+
+
+h = Human()
+h.gender = 'F'
+h.gender
+del h.gender
