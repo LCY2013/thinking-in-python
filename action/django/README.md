@@ -189,7 +189,11 @@ python manage.py migrate mysite
 ## 16. 创建模型
 
 ```bash
+#创建数据库
 python manage.py makemigrations index
+#查看生成的sql
+python manage.py sqlmigrate index 0001 
+#迁移文件应用到我们的数据库中
 python manage.py migrate index
 ```
 
