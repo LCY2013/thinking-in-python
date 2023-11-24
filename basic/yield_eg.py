@@ -91,7 +91,46 @@ races = itertools.permutations(horses)
 print(races)
 # <itertools.permutations object at 0x1170a3740>
 print(list(itertools.permutations(horses)))
+
+
 # [(1, 2, 3, 4), (1, 2, 4, 3), (1, 3, 2, 4), (1, 3, 4, 2), (1, 4, 2, 3), (1, 4, 3, 2), (2, 1, 3, 4), (2, 1, 4, 3), (2, 3, 1, 4), (2, 3, 4, 1), (2, 4, 1, 3), (2, 4, 3, 1), (3, 1, 2, 4), (3, 1, 4, 2), (3, 2, 1, 4), (3, 2, 4, 1), (3, 4, 1, 2), (3, 4, 2, 1), (4, 1, 2, 3), (4, 1, 3, 2), (4, 2, 1, 3), (4, 2, 3, 1), (4, 3, 1, 2), (4, 3, 2, 1)]
 
 # 迭代器的内部机理
 # 迭代是一个实现可迭代对象(实现的是 __iter__() 方法)和迭代器(实现的是 __next__() 方法)的过程。可迭代对象是你可以从其获取到一个迭代器的任一对象。迭代器是那些允许你迭代可迭代对象的对象。
+
+# 自定义迭代器
+class MyIterator:
+    def __init__(self, start, end):
+        self.current = start
+        self.end = end
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.current < self.end:
+            result = self.current
+            self.current += 1
+            return result
+        else:
+            raise StopIteration
+
+
+# 使用迭代器
+my_iter = MyIterator(1, 5)
+
+for num in my_iter:
+    print(num)
+
+
+# 在实际的开发中，你可能会更频繁地使用生成器（generator），因为它们是一种更简洁的实现迭代器的方式。下面是一个使用生成器的例子：
+def my_iterator(start, end):
+    current = start
+    while current < end:
+        yield current
+        current += 1
+
+
+# 使用生成器迭代
+for num in my_iterator(1, 5):
+    print(num)
