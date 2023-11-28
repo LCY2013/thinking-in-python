@@ -40,7 +40,9 @@ print("People", People.__class__, People.__bases__)
 print('object', object.__class__, object.__bases__)
 print('type', type.__class__, type.__bases__)
 
-
+# People <class 'type'> (<class 'object'>,)
+# object <class 'type'> ()
+# type <class 'type'> (<class 'object'>,)
 # type元类由type自身创建，object类由元类type创建
 # type类继承了object类
 
