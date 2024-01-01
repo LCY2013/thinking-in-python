@@ -12,7 +12,8 @@ pipeline = pipeline.to("mps")
 url = "https://huggingface.co/datasets/hf-internal-testing/diffusers-images/resolve/main/sd2-upscale/low_res_cat.png"
 low_res_img = load_image(url)
 low_res_img = low_res_img.resize((128, 128))
-prompt = "a white cat"
+# prompt = "a white cat"
+prompt = "a beautiful golden blond wearing red clothes"
 upscaled_image = pipeline(prompt=prompt, image=low_res_img).images[0]
 make_image_grid([low_res_img.resize((512, 512)), upscaled_image.resize((512, 512))], rows=1, cols=2)
 upscaled_image.save("low_res_cat.png")

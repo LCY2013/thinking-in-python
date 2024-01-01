@@ -7,7 +7,8 @@ pipe.to("mps")
 
 # prompt = "A cinematic shot of a baby racoon wearing an intricate italian priest robe."
 # prompt = "a photo of an astronaut riding a horse on mars"
-prompt = "A lazy idiot is riding a pig"
+# prompt = "A lazy idiot is riding a pig"
+prompt = "A beautiful golden gradient cat wearing red clothes"
 
 image = pipe(prompt=prompt, num_inference_steps=1, guidance_scale=0.0).images[0]
 
