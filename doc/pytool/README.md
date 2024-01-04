@@ -33,6 +33,8 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --trusted-host pypi.tuna
 ## 永久替换 pip源
 pip install pip -U 
 pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple 
+pip config set global.index-url https://pypi.python.org/simple
+ 
 
 # 10. requirements.txt
 ## 生成requirements.txt
