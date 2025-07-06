@@ -41,6 +41,8 @@ pip config set global.index-url https://pypi.python.org/simple
 pip freeze > requirements.txt
 ## 安装requirements.txt
 pip install -r requirements.txt
+
+pip install --no-dependencies -r requirements.txt
 ```
 
 ## 1. pyenv
