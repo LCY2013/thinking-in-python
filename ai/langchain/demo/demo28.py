@@ -1,6 +1,6 @@
 # 导入所需的库和模块
 from langchain.prompts import PromptTemplate, ChatPromptTemplate, HumanMessagePromptTemplate
-from langchain.llms import OpenAI
+from langchain_openai import OpenAI
 from langchain.chat_models import ChatOpenAI
 from langchain.output_parsers import PydanticOutputParser
 from pydantic import BaseModel, Field, validator

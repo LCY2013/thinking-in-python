@@ -1,4 +1,4 @@
-from langchain.llms import OpenAI
+from langchain_openai import OpenAI
 from langchain.callbacks import get_openai_callback
 
 llm = OpenAI(model_name="text-davinci-002", n=2, best_of=2, cache=None)

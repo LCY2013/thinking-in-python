@@ -1,7 +1,7 @@
 import os
 import openai
 import asyncio
-from langchain.llms import OpenAI
+from langchain_openai import OpenAI
 
 # 设置代理
 openai.proxy = os.getenv('https_proxy')

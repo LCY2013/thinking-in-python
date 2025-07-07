@@ -1,4 +1,4 @@
-from langchain.llms import OpenAI
+from langchain_openai import OpenAI
 
 llm = OpenAI()
 print(llm('你是谁'))

@@ -1,5 +1,6 @@
 # 从langchain.llms.fake模块导入FakeListLLM类，此类可能用于模拟或伪造某种行为
-from langchain.llms.fake import FakeListLLM
+# from langchain_community.llms import FakeListLLM
+from langchain_community.llms import FakeListLLM
 from langchain.agents import load_tools
 from langchain.agents import initialize_agent
 from langchain.agents import AgentType

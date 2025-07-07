@@ -525,7 +525,7 @@ example_selector.select_examples({"input": "horse"})
 1.单个调用：直接调用Model对象，传入一串字符串然后直接返回输出值，以openAI为例：
 
 ```python
-from langchain.llms import OpenAI
+from langchain_openai import OpenAI
 
 llm = OpenAI()
 print(llm('你是谁'))
@@ -546,7 +546,7 @@ llm_result = llm.generate(["给我背诵一首古诗", "给我讲个100字小故
 import os
 import openai
 import asyncio
-from langchain.llms import OpenAI
+from langchain_openai import OpenAI
 
 # 设置代理
 openai.proxy = os.getenv('https_proxy')
@@ -613,7 +613,7 @@ class CustomLLM(LLM):  # 这个类 CustomLLM 继承了 LLM 类，并增加了一
 
 ```python
 # 从langchain.llms.fake模块导入FakeListLLM类，此类可能用于模拟或伪造某种行为
-from langchain.llms.fake import FakeListLLM
+from langchain_community.llms import FakeListLLM
 from langchain.agents import load_tools
 from langchain.agents import initialize_agent
 from langchain.agents import AgentType
@@ -658,7 +658,7 @@ agent.run("What is 'Bocchi the Rock!'?")
 ```python
 from langchain.cache import SQLiteCache
 import langchain
-from langchain.llms import OpenAI
+from langchain_openai import OpenAI
 import time
 
 langchain.llm_cache = SQLiteCache(database_path=".langchain.db")
@@ -679,7 +679,7 @@ print(f"Predict method took {elapsed_time:.4f} seconds to execute.")
 ```python
 from langchain.cache import SQLiteCache
 import langchain
-from langchain.llms import OpenAI
+from langchain_openai import OpenAI
 import time
 
 langchain.llm_cache = SQLiteCache(database_path=".langchain.db")
@@ -696,7 +696,7 @@ print(f"Predict method took {elapsed_time:.4f} seconds to execute.")
 7.跟踪token使用情况（仅限model为openAI）:
 
 ```python
-from langchain.llms import OpenAI
+from langchain_openai import OpenAI
 from langchain.callbacks import get_openai_callback
 
 llm = OpenAI(model_name="text-davinci-002", n=2, best_of=2, cache=None)
@@ -713,7 +713,7 @@ with get_openai_callback() as cb:
 from langchain.agents import load_tools
 from langchain.agents import initialize_agent
 from langchain.agents import AgentType
-from langchain.llms import OpenAI
+from langchain_openai import OpenAI
 from langchain.callbacks import get_openai_callback
 
 llm = OpenAI(temperature=0)
@@ -759,7 +759,7 @@ llm.save("llmsave.json")
 9.流式处理大语言模型的响应：流式处理意味着，在接收到第一个数据块后就立即开始处理，而不需要等待整个数据包传输完毕。这种概念应用在LLM中则可达到生成响应时就立刻向用户展示此下的响应，或者在生成响应时处理响应，也就是我们现在看到的和ai对话时逐字输出的效果：可以看到实现还是较为方便的只需要直接调用StreamingStdOutCallbackHandler作为callback即可。
 
 ```python
-from langchain.llms import OpenAI
+from langchain_openai import OpenAI
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 
 llm = OpenAI(streaming=True, callbacks=[StreamingStdOutCallbackHandler()], temperature=0)
@@ -777,7 +777,7 @@ Model返回的内容通常都是字符串的模式，但在实际开发过程中
 ```python
 from langchain.output_parsers import CommaSeparatedListOutputParser
 from langchain.prompts import PromptTemplate, ChatPromptTemplate, HumanMessagePromptTemplate
-from langchain.llms import OpenAI
+from langchain_openai import OpenAI
 from langchain.chat_models import ChatOpenAI
 
 output_parser = CommaSeparatedListOutputParser()
@@ -803,7 +803,7 @@ output_parser.parse(output)
 from langchain.prompts import PromptTemplate
 from langchain.output_parsers import DatetimeOutputParser
 from langchain.chains import LLMChain
-from langchain.llms import OpenAI
+from langchain_openai import OpenAI
 
 output_parser = DatetimeOutputParser()
 
@@ -842,7 +842,7 @@ parser = EnumOutputParser(enum=Colors)
 ```python
 # 导入所需的库和模块
 from langchain.prompts import PromptTemplate, ChatPromptTemplate, HumanMessagePromptTemplate
-from langchain.llms import OpenAI
+from langchain_openai import OpenAI
 from langchain.chat_models import ChatOpenAI
 from langchain.output_parsers import PydanticOutputParser
 from pydantic import BaseModel, Field, validator
@@ -877,7 +877,7 @@ parser.parse(misformatted)
 
 ```python
 from langchain.output_parsers import RetryWithErrorOutputParser
-from langchain.llms import OpenAI
+from langchain_openai import OpenAI
 
 retry_parser = RetryWithErrorOutputParser.from_llm(
     parser=parser, llm=OpenAI(temperature=0))
@@ -1897,7 +1897,7 @@ StdOutCallbackHandler 是 LangChain 支持的最基本的处理器，它继承�
 ```python
 from langchain.callbacks import StdOutCallbackHandler
 from langchain.chains import LLMChain
-from langchain.llms import OpenAI
+from langchain_openai import OpenAI
 from langchain.prompts import PromptTemplate
 
 handler = StdOutCallbackHandler()
